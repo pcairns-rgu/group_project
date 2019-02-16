@@ -71,7 +71,7 @@ function test_input($data) {
     <label>Name:<input type="text" name="name" value="<?php echo $name;?>"></label>
     <span class="error">*<?php echo $nameErr;?></span>
     <br>
-    <label>Password: <input type="password" name="psw" value="<?php echo $password;?>"></label>
+    <label>Password: <input type="password" name="password" value="<?php echo $password;?>"></label>
     <span class="error">*<?php echo $passwordErr;?></span>
     <br>
     <label>Email: <input type="email" name="email" value="<?php echo $email;?>"></label>
