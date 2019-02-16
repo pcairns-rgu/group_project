@@ -59,7 +59,6 @@ function test_input($data) {
 ?>
 
 
-
 <!--Header on page -->
 <h2>Create your profile</h2>
 <!-- Wording to indicate required fields -->
