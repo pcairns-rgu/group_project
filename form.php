@@ -17,8 +17,6 @@ $twitter= $facebook= $instagram= $photo= "";
 $nameErr= $passwordErr= $employerErr= $roleErr= $phoneErr= $emailErr= $linkedinErr= $githubErr=
 $twitterErr= $facebookErr= $instagramErr= $photoErr= "";
 
-
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["name"])) {
         $nameErr = "Name is required";
@@ -67,7 +65,6 @@ if (empty($_POST["role"])) {
 } else {
     $role = test_input($_POST["role"]);
 }
-
 
 if (empty($_POST["linkedin"])) {
     $linkedin= "";
@@ -149,8 +146,7 @@ function test_input($data) {
         <br>
 
     </fieldset>
-
-
+    
 
     <fieldset>
         <legend>Social media links </legend>
