@@ -61,6 +61,7 @@ function test_input($data) {
 
 <!--Header on page -->
 <h2>Create your profile</h2>
+
 <!-- Wording to indicate required fields -->
 <p><span class="error">* required field</span></p>
 
@@ -68,35 +69,52 @@ function test_input($data) {
 <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
 
     <!--Make name, password and email compulsory -->
-    <label>Name:<input type="text" name="name" value="<?php echo $name;?>"></label>
-    <span class="error">*<?php echo $nameErr;?></span>
-    <br>
-    <label>Password: <input type="password" name="password" value="<?php echo $password;?>"></label>
-    <span class="error">*<?php echo $passwordErr;?></span>
-    <br>
-    <label>Email: <input type="email" name="email" value="<?php echo $email;?>"></label>
-    <span class="error">*<?php echo $emailErr;?></span>
-    <br>
+    <fieldset>
+        <legend>Contact details</legend>
+        <label>Name:<input type="text" name="name" required = "required" value="<?php echo $name;?>"></label>
+        <span class="error">*<?php echo $nameErr;?></span>
+        <br>
+        <label>Password: <input type="password" name="password" required="required" maxlength="20" value="<?php echo $password;?>"></label>
+        <span class="error">*<?php echo $passwordErr;?></span>
+        <br>
+        <label>Email: <input type="email" name="email" required="required" value="<?php echo $email;?>"></label>
+        <span class="error">*<?php echo $emailErr;?></span>
+        <br>
 
-    <!--Optional inputs -->
-    <label>Employer:<input type="text" name="employer" value="<?php echo $employer;?>"></label>
-    <br>
-    <label>Role description:<input type="text" name="role" value="<?php echo $role;?>"></label>
-    <br>
-    <label>Telephone: <input type="text" name="phone" value="<?php echo $phone;?>"></label>
-    <br>
-    <label>LinkedIn: <input type="url" name="linkedin" value="<?php echo $linkedin;?>"></label>
-    <br>
-    <label><input type="url" name="github" value="<?php echo $github;?>"></label>
-    <br>
-    <label>Twitter: <input type="url" name="twitter" value="<?php echo $twitter;?>"></label>
-    <br>
-    <label>Facebook: <input type="url" name="facebook" value="<?php echo $facebook;?>"></label>
-    <br>
-    <label>Instagram: <input type="url" name="instagram" value="<?php echo $instagram;?>"></label>
-    <br>
-    <label>Photo: <input type="file" name="photo" value="<?php echo $photo;?>"></label>
-    <br>
+        <!--Optional inputs -->
+        <label>Telephone: <input type="number" name="phone" maxlength="20" value="<?php echo $phone;?>"></label>
+        <br>
+        <label>Employer:<input type="text" name="employer" value="<?php echo $employer;?>"></label>
+        <br>
+        <label>Role description:<input type="text" name="role" value="<?php echo $role;?>"></label>
+        <br>
+
+    </fieldset>
+
+
+
+    <fieldset>
+        <legend>Social media links </legend>
+        <label>LinkedIn: <input type="url" name="linkedin" value="<?php echo $linkedin;?>"></label>
+        <br>
+        <label>Github:<input type="url" name="github" value="<?php echo $github;?>"></label>
+        <br>
+        <label>Twitter: <input type="url" name="twitter" value="<?php echo $twitter;?>"></label>
+        <br>
+        <label>Facebook: <input type="url" name="facebook" value="<?php echo $facebook;?>"></label>
+        <br>
+        <label>Instagram: <input type="url" name="instagram" value="<?php echo $instagram;?>"></label>
+        <br>
+    </fieldset>
+
+    <!--Upload photo -->
+    <fieldset>
+        <legend>Photo</legend>
+        <label>Photo: <input type="file" name="photo" value="<?php echo $photo;?>"></label>
+        <br>
+    </fieldset>
+
+    <!--Submit form-->
     <p><input type="submit" name="Submit" value="Submit"></p>
 
 </form>
@@ -110,15 +128,25 @@ function test_input($data) {
 echo $name;
 echo "<br>";
 echo $password;
+echo "<br>";
 echo $employer;
+echo "<br>";
 echo $role;
+echo "<br>";
 echo $phone;
+echo "<br>";
 echo $email;
+echo "<br>";
 echo $linkedin;
+echo "<br>";
 echo $github;
+echo "<br>";
 echo $twitter;
+echo "<br>";
 echo $facebook;
+echo "<br>";
 echo $instagram;
+echo "<br>";
 echo $photo;
 
 ?>
