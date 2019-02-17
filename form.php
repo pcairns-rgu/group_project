@@ -50,6 +50,62 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
+if (empty($_POST["phone"])) {
+    $phone= "";
+} else {
+    $phone = test_input($_POST["phone"]);
+}
+
+if (empty($_POST["employer"])) {
+    $employer= "";
+} else {
+    $employer = test_input($_POST["employer"]);
+}
+
+if (empty($_POST["role"])) {
+    $role= "";
+} else {
+    $role = test_input($_POST["role"]);
+}
+
+
+if (empty($_POST["linkedin"])) {
+    $linkedin= "";
+} else {
+    $linkedin = test_input($_POST["linkedin"]);
+}
+
+if (empty($_POST["github"])) {
+    $github= "";
+} else {
+    $github = test_input($_POST["github"]);
+}
+
+if (empty($_POST["twitter"])) {
+    $twitter= "";
+} else {
+    $twitter = test_input($_POST["twitter"]);
+}
+
+if (empty($_POST["facebook"])) {
+    $facebook= "";
+} else {
+    $facebook = test_input($_POST["facebook"]);
+}
+
+if (empty($_POST["instagram"])) {
+    $instagram= "";
+} else {
+    $instagram = test_input($_POST["instagram"]);
+}
+
+if (empty($_POST["photo"])) {
+    $photo= "";
+} else {
+    $photo = test_input($_POST["photo"]);
+}
+
+
 function test_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
@@ -72,21 +128,24 @@ function test_input($data) {
     <fieldset>
         <legend>Contact details</legend>
         <label>Name:<input type="text" name="name" required = "required" value="<?php echo $name;?>"></label>
-        <span class="error">*<?php echo $nameErr;?></span>
+            <span class="error">*<?php echo $nameErr;?></span>
         <br>
         <label>Password: <input type="password" name="password" required="required" maxlength="20" value="<?php echo $password;?>"></label>
-        <span class="error">*<?php echo $passwordErr;?></span>
+            <span class="error">*<?php echo $passwordErr;?></span>
         <br>
         <label>Email: <input type="email" name="email" required="required" value="<?php echo $email;?>"></label>
-        <span class="error">*<?php echo $emailErr;?></span>
+            <span class="error">*<?php echo $emailErr;?></span>
         <br>
 
         <!--Optional inputs -->
         <label>Telephone: <input type="number" name="phone" maxlength="20" value="<?php echo $phone;?>"></label>
+            <span class="error"><?php echo $phoneErr;?></span>
         <br>
-        <label>Employer:<input type="text" name="employer" value="<?php echo $employer;?>"></label>
+        <label>Employer:<input type="text" name="employer" value="<?php echo $employer;?>">
+            <span class="error"><?php echo $employerErr;?></span>
         <br>
         <label>Role description:<input type="text" name="role" value="<?php echo $role;?>"></label>
+            <span class="error"><?php echo $roleErr;?></span>
         <br>
 
     </fieldset>
@@ -96,14 +155,19 @@ function test_input($data) {
     <fieldset>
         <legend>Social media links </legend>
         <label>LinkedIn: <input type="url" name="linkedin" value="<?php echo $linkedin;?>"></label>
+            <span class="error"><?php echo $linkedinErr;?></span>
         <br>
         <label>Github:<input type="url" name="github" value="<?php echo $github;?>"></label>
+            <span class="error"><?php echo $githubErr;?></span>
         <br>
         <label>Twitter: <input type="url" name="twitter" value="<?php echo $twitter;?>"></label>
+            <span class="error"><?php echo $twitterErr;?></span>
         <br>
         <label>Facebook: <input type="url" name="facebook" value="<?php echo $facebook;?>"></label>
+            <span class="error"><?php echo $facebookErr;?></span>
         <br>
         <label>Instagram: <input type="url" name="instagram" value="<?php echo $instagram;?>"></label>
+            <span class="error"><?php echo $instagramErr;?></span>
         <br>
     </fieldset>
 
@@ -111,6 +175,7 @@ function test_input($data) {
     <fieldset>
         <legend>Photo</legend>
         <label>Photo: <input type="file" name="photo" value="<?php echo $photo;?>"></label>
+            <span class="error"><?php echo $photoErr;?></span>
         <br>
     </fieldset>
 
